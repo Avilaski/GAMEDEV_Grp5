@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8e720ba0c1e9d4a8bbd9536f056fc0, type: 3}
   m_Name: SpawnTestMap
   m_EditorClassIdentifier: Assembly-CSharp::RhythmMap
-  song: {fileID: 0}
+  song: {fileID: 8300000, guid: e6b739b192f4df040a2ec3338b32cb2f, type: 3}
   entries:
   - laneIndex: 0
     prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
