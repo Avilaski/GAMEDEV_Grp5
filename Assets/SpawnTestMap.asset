@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8e720ba0c1e9d4a8bbd9536f056fc0, type: 3}
+  m_Name: SpawnTestMap
+  m_EditorClassIdentifier: Assembly-CSharp::RhythmMap
+  song: {fileID: 8300000, guid: e6b739b192f4df040a2ec3338b32cb2f, type: 3}
+  entries:
+  - laneIndex: 0
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 1
+    arrivalTime: 5
+  - laneIndex: 1
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 2
+    arrivalTime: 6
+  - laneIndex: 2
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 3
+    arrivalTime: 7
+  - laneIndex: 0
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 4
+    arrivalTime: 8
+  - laneIndex: 1
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 4
+    arrivalTime: 8
+  - laneIndex: 2
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 4
+    arrivalTime: 8
+  - laneIndex: 0
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 5
+    arrivalTime: 9
+  - laneIndex: 1
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 5.5
+    arrivalTime: 9.5
+  - laneIndex: 2
+    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    spawnTime: 6
+    arrivalTime: 10
