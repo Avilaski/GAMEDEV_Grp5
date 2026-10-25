@@ -11,6 +11,19 @@ public class LaneMover : MonoBehaviour
     private double arrivalTime;
     private bool isMoving;
 
+    public bool DestroyByBlast()
+    {
+        if (!isMoving || !gameObject.activeInHierarchy)
+            return false;
+
+        isMoving = false;
+        // Disable immediately so another explosion cannot hit this object again
+        // before Unity processes the deferred Destroy call.
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+        return true;
+    }
+
     public void Initialize(Vector3 start, Vector3 end, double spawnAt, double arriveAt)
     {
         startPosition = start;

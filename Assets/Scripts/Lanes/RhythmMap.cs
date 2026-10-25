@@ -14,5 +14,8 @@ public class LaneSpawnEntry
 public class RhythmMap : ScriptableObject
 {
     public AudioClip song;
+    [Header("Beat clock (set these to match the song)")]
+    [Min(1f)] public float beatsPerMinute = 120f;
+    [Min(0f)] public float firstBeatTime;
     public LaneSpawnEntry[] entries = new LaneSpawnEntry[0];
 }

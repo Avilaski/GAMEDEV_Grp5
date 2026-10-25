@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4988349333499389842}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01999998, y: 0.8374531, z: -1.0981808}
+  m_LocalPosition: {x: -0.046, y: 0.8374531, z: -1.0981808}
   m_LocalScale: {x: 1.4049284, y: 3.5686, z: 0.15615}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -409,6 +409,8 @@ GameObject:
   - component: {fileID: 4842671859369991217}
   - component: {fileID: 8095533137615139080}
   - component: {fileID: 4658290057868486865}
+  - component: {fileID: 5550192823978642809}
+  - component: {fileID: 6744190012345678001}
   m_Layer: 0
   m_Name: RedLane
   m_TagString: Untagged
@@ -431,6 +433,7 @@ Transform:
   m_Children:
   - {fileID: 4085121899362346816}
   - {fileID: 7273974575867414883}
+  - {fileID: 601582672913027850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8755706440194880802
@@ -945,6 +948,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneController
   startPoint: {fileID: 4085121899362346816}
   despawnPoint: {fileID: 7273974575867414883}
+--- !u!114 &5550192823978642809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423162323596186222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6433bd6b9041cd95b542a464ecb492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BombController
+  player: {fileID: 0}
+  placementRadius: 2.5
+  useBeatTiming: 0
+  fuseSeconds: 1
+  songClock: {fileID: 0}
+  bombPoint: {fileID: 601582672913027850}
+  bombPrefab: {fileID: 7791978097386623694, guid: d05fccb8de2b83c4995dc7c850dde410, type: 3}
+  placementKey: 1
+  beatWindowSeconds: 0.12
+--- !u!114 &6744190012345678001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423162323596186222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd3fc76a95e4b50a2d350394dd04f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BombBlast
+  blastZone: {fileID: 0}
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!1 &6526702056807593464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601582672913027850}
+  m_Layer: 0
+  m_Name: BombPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601582672913027850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526702056807593464}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.057834376, y: 1.39, z: 0.01947689}
+  m_LocalScale: {x: 1.4049284, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4641452539406293080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7996643605286674844
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +1046,7 @@ Transform:
   m_GameObject: {fileID: 7996643605286674844}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.4540002, z: 20.514816}
+  m_LocalPosition: {x: -0.05, y: 0.4540002, z: 20.514816}
   m_LocalScale: {x: 1.3549, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
