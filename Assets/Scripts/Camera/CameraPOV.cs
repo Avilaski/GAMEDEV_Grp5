@@ -22,6 +22,14 @@ public class CameraPOV : MonoBehaviour
 
     public void ChangePerspective()
     {
+        Debug.Log("Camera button clicked!");
+
+        if (mainCamera == null)
+        {
+            Debug.LogError("Main Camera is not assigned!");
+            return;
+        }
+
         currentPerspective++;
 
         if (currentPerspective >= cameraPositions.Length)
@@ -29,7 +37,12 @@ public class CameraPOV : MonoBehaviour
             currentPerspective = 0;
         }
 
-        mainCamera.transform.position = cameraPositions[currentPerspective];
-        mainCamera.transform.eulerAngles = cameraRotations[currentPerspective];
+        mainCamera.transform.position =
+            cameraPositions[currentPerspective];
+
+        mainCamera.transform.eulerAngles =
+            cameraRotations[currentPerspective];
+
+        Debug.Log("Switched to perspective: " + currentPerspective);
     }
 }

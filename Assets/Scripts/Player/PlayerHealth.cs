@@ -1,34 +1,55 @@
 
 using UnityEngine;
-using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
+    [Header("Health Settings")]
+    public int maxHealth = 10;
+
     private int currentHealth;
+    private bool isDead = false;
 
-    public TMP_Text healthText;
-    public Transform spawnPoint;
+    [Header("References")]
+    public HealthBar healthBar;
+    public GameOverManager gameOverManager;
 
-    private CharacterController controller;
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-        ResetHealth();
+        currentHealth = maxHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(true);
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if (isDead || damage <= 0)
+            return;
 
         currentHealth = Mathf.Clamp(
-            currentHealth, 0, maxHealth
+            currentHealth - damage,
+            0,
+            maxHealth
         );
 
-        UpdateHealthUI();
-
         Debug.Log("Player Health: " + currentHealth);
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar();
+        }
 
         if (currentHealth <= 0)
         {
@@ -38,45 +59,39 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amount)
     {
-        currentHealth += amount;
+        if (isDead || amount <= 0)
+            return;
 
         currentHealth = Mathf.Clamp(
-            currentHealth, 0, maxHealth
+            currentHealth + amount,
+            0,
+            maxHealth
         );
 
-        UpdateHealthUI();
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar();
+        }
     }
 
     void Die()
     {
-        Debug.Log("Game Over! Respawning...");
+        if (isDead)
+            return;
 
-        if (spawnPoint != null)
+        isDead = true;
+
+        Debug.Log("Game Over! Player has run out of health.");
+
+        if (gameOverManager != null)
         {
-            if (controller != null)
-                controller.enabled = false;
-
-            transform.position = spawnPoint.position;
-            transform.rotation = spawnPoint.rotation;
-
-            if (controller != null)
-                controller.enabled = true;
+            gameOverManager.ShowGameOver();
         }
-
-        ResetHealth();
-    }
-
-    void ResetHealth()
-    {
-        currentHealth = maxHealth;
-        UpdateHealthUI();
-    }
-
-    void UpdateHealthUI()
-    {
-        if (healthText != null)
+        else
         {
-            healthText.text = "Health: " + currentHealth;
+            Debug.LogError(
+                "GameOverManager is not assigned to PlayerHealth!"
+            );
         }
     }
 }
