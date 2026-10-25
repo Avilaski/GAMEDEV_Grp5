@@ -13,724 +13,905 @@ MonoBehaviour:
   m_Name: BombermanBeatMap
   m_EditorClassIdentifier: Assembly-CSharp::RhythmMap
   song: {fileID: 8300000, guid: 3a6bc99b88e5c0644912a3755b8eec71, type: 3}
+  blastExpansionSeconds: 0.083333336
   entries:
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 0
     arrivalTime: 0.323311
+    bombPlacementTime: 0.323311
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 0
     arrivalTime: 1.762948
+    bombPlacementTime: 1.762948
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 0
     arrivalTime: 3.341905
+    bombPlacementTime: 3.341905
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 1
     arrivalTime: 4.920862
+    bombPlacementTime: 4.920862
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 1
     arrivalTime: 5.496689
+    bombPlacementTime: 5.496689
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 2
     arrivalTime: 6.030748
+    bombPlacementTime: 6.030748
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 3
     arrivalTime: 6.541587
+    bombPlacementTime: 6.541587
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 4
     arrivalTime: 8.004444
+    bombPlacementTime: 8.004444
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 6
     arrivalTime: 9.583401
+    bombPlacementTime: 9.583401
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 7
     arrivalTime: 11.162358
+    bombPlacementTime: 11.162358
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 9
     arrivalTime: 12.671655
+    bombPlacementTime: 12.671655
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 10
     arrivalTime: 14.250612
+    bombPlacementTime: 14.250612
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 12
     arrivalTime: 15.783129
+    bombPlacementTime: 15.783129
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 13
     arrivalTime: 17.338865
+    bombPlacementTime: 17.338865
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 15
     arrivalTime: 18.871384
+    bombPlacementTime: 18.871384
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 16
     arrivalTime: 20.47356
+    bombPlacementTime: 20.47356
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 18
     arrivalTime: 21.959637
+    bombPlacementTime: 21.959637
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 20
     arrivalTime: 23.538593
+    bombPlacementTime: 23.538593
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 21
     arrivalTime: 25.071112
+    bombPlacementTime: 25.071112
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 23
     arrivalTime: 26.626848
+    bombPlacementTime: 26.626848
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 24
     arrivalTime: 28.101995
+    bombPlacementTime: 28.101995
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 26
     arrivalTime: 29.727392
+    bombPlacementTime: 29.727392
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 27
     arrivalTime: 31.259909
+    bombPlacementTime: 31.259909
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 28
     arrivalTime: 31.961088
+    bombPlacementTime: 31.961088
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 28
     arrivalTime: 32.379047
+    bombPlacementTime: 32.379047
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 29
     arrivalTime: 32.84345
+    bombPlacementTime: 32.84345
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 30
     arrivalTime: 33.609707
+    bombPlacementTime: 33.609707
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 30
     arrivalTime: 33.981224
+    bombPlacementTime: 33.981224
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 30
     arrivalTime: 34.399185
+    bombPlacementTime: 34.399185
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 31
     arrivalTime: 35.165443
+    bombPlacementTime: 35.165443
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 32
     arrivalTime: 35.51374
+    bombPlacementTime: 35.51374
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 32
     arrivalTime: 35.9317
+    bombPlacementTime: 35.9317
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 33
     arrivalTime: 36.67474
+    bombPlacementTime: 36.67474
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 33
     arrivalTime: 37.416008
+    bombPlacementTime: 37.416008
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 34
     arrivalTime: 38.159046
+    bombPlacementTime: 38.159046
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 35
     arrivalTime: 38.553787
+    bombPlacementTime: 38.553787
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 35
     arrivalTime: 38.971745
+    bombPlacementTime: 38.971745
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 36
     arrivalTime: 39.761223
+    bombPlacementTime: 39.761223
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 36
     arrivalTime: 40.084534
+    bombPlacementTime: 40.084534
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 37
     arrivalTime: 40.502495
+    bombPlacementTime: 40.502495
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 37
     arrivalTime: 41.268753
+    bombPlacementTime: 41.268753
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 38
     arrivalTime: 41.68671
+    bombPlacementTime: 41.68671
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 38
     arrivalTime: 42.08145
+    bombPlacementTime: 42.08145
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 40
     arrivalTime: 43.68009
+    bombPlacementTime: 43.68009
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 40
     arrivalTime: 44.42136
+    bombPlacementTime: 44.42136
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 41
     arrivalTime: 44.79288
+    bombPlacementTime: 44.79288
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 41
     arrivalTime: 45.25728
+    bombPlacementTime: 45.25728
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 42
     arrivalTime: 45.953876
+    bombPlacementTime: 45.953876
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 42
     arrivalTime: 46.323627
+    bombPlacementTime: 46.323627
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 43
     arrivalTime: 46.76481
+    bombPlacementTime: 46.76481
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 44
     arrivalTime: 47.531067
+    bombPlacementTime: 47.531067
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 44
     arrivalTime: 47.879364
+    bombPlacementTime: 47.879364
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 44
     arrivalTime: 48.297325
+    bombPlacementTime: 48.297325
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 45
     arrivalTime: 49.017143
+    bombPlacementTime: 49.017143
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 46
     arrivalTime: 49.85306
+    bombPlacementTime: 49.85306
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 47
     arrivalTime: 50.5961
+    bombPlacementTime: 50.5961
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 47
     arrivalTime: 50.96762
+    bombPlacementTime: 50.96762
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 47
     arrivalTime: 51.4088
+    bombPlacementTime: 51.4088
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 48
     arrivalTime: 52.175056
+    bombPlacementTime: 52.175056
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 49
     arrivalTime: 52.519817
+    bombPlacementTime: 52.519817
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 49
     arrivalTime: 52.91456
+    bombPlacementTime: 52.91456
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 50
     arrivalTime: 53.634377
+    bombPlacementTime: 53.634377
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 50
     arrivalTime: 54.052338
+    bombPlacementTime: 54.052338
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 50
     arrivalTime: 54.493515
+    bombPlacementTime: 54.493515
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 52
     arrivalTime: 56.00104
+    bombPlacementTime: 56.00104
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 54
     arrivalTime: 57.60322
+    bombPlacementTime: 57.60322
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 55
     arrivalTime: 59.0893
+    bombPlacementTime: 59.0893
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 57
     arrivalTime: 60.668255
+    bombPlacementTime: 60.668255
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 58
     arrivalTime: 62.24721
+    bombPlacementTime: 62.24721
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 60
     arrivalTime: 63.756508
+    bombPlacementTime: 63.756508
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 61
     arrivalTime: 65.31225
+    bombPlacementTime: 65.31225
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 63
     arrivalTime: 66.844765
+    bombPlacementTime: 66.844765
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 64
     arrivalTime: 68.4005
+    bombPlacementTime: 68.4005
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 66
     arrivalTime: 69.95624
+    bombPlacementTime: 69.95624
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 67
     arrivalTime: 71.488754
+    bombPlacementTime: 71.488754
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 69
     arrivalTime: 73.04449
+    bombPlacementTime: 73.04449
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 71
     arrivalTime: 74.577
+    bombPlacementTime: 74.577
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 72
     arrivalTime: 76.15597
+    bombPlacementTime: 76.15597
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 74
     arrivalTime: 77.688484
+    bombPlacementTime: 77.688484
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 75
     arrivalTime: 79.26744
+    bombPlacementTime: 79.26744
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 77
     arrivalTime: 80.75352
+    bombPlacementTime: 80.75352
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 77
     arrivalTime: 81.49655
+    bombPlacementTime: 81.49655
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 78
     arrivalTime: 81.8913
+    bombPlacementTime: 81.8913
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 78
     arrivalTime: 82.35569
+    bombPlacementTime: 82.35569
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 79
     arrivalTime: 83.12195
+    bombPlacementTime: 83.12195
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 79
     arrivalTime: 83.49347
+    bombPlacementTime: 83.49347
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 80
     arrivalTime: 83.93465
+    bombPlacementTime: 83.93465
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 81
     arrivalTime: 84.67769
+    bombPlacementTime: 84.67769
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 81
     arrivalTime: 85.04921
+    bombPlacementTime: 85.04921
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 81
     arrivalTime: 85.44395
+    bombPlacementTime: 85.44395
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 82
     arrivalTime: 86.14054
+    bombPlacementTime: 86.14054
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 83
     arrivalTime: 86.95324
+    bombPlacementTime: 86.95324
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 84
     arrivalTime: 87.69628
+    bombPlacementTime: 87.69628
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 84
     arrivalTime: 88.0678
+    bombPlacementTime: 88.0678
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 85
     arrivalTime: 88.50898
+    bombPlacementTime: 88.50898
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 85
     arrivalTime: 89.25202
+    bombPlacementTime: 89.25202
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 86
     arrivalTime: 89.64499
+    bombPlacementTime: 89.64499
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 86
     arrivalTime: 90.08617
+    bombPlacementTime: 90.08617
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 87
     arrivalTime: 90.805984
+    bombPlacementTime: 90.805984
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 87
     arrivalTime: 91.223946
+    bombPlacementTime: 91.223946
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 88
     arrivalTime: 91.61868
+    bombPlacementTime: 91.61868
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 89
     arrivalTime: 93.19587
+    bombPlacementTime: 93.19587
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 90
     arrivalTime: 93.93891
+    bombPlacementTime: 93.93891
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 90
     arrivalTime: 94.33365
+    bombPlacementTime: 94.33365
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 91
     arrivalTime: 94.77483
+    bombPlacementTime: 94.77483
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 92
     arrivalTime: 95.51787
+    bombPlacementTime: 95.51787
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 92
     arrivalTime: 95.866165
+    bombPlacementTime: 95.866165
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 92
     arrivalTime: 96.28413
+    bombPlacementTime: 96.28413
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 93
     arrivalTime: 97.02717
+    bombPlacementTime: 97.02717
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 93
     arrivalTime: 97.421906
+    bombPlacementTime: 97.421906
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 94
     arrivalTime: 97.81664
+    bombPlacementTime: 97.81664
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 95
     arrivalTime: 98.559685
+    bombPlacementTime: 98.559685
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 95
     arrivalTime: 99.32594
+    bombPlacementTime: 99.32594
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 96
     arrivalTime: 100.0922
+    bombPlacementTime: 100.0922
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 96
     arrivalTime: 100.48694
+    bombPlacementTime: 100.48694
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 97
     arrivalTime: 100.928116
+    bombPlacementTime: 100.928116
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 98
     arrivalTime: 101.67116
+    bombPlacementTime: 101.67116
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 98
     arrivalTime: 102.08912
+    bombPlacementTime: 102.08912
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 99
     arrivalTime: 102.50707
+    bombPlacementTime: 102.50707
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 99
     arrivalTime: 103.22689
+    bombPlacementTime: 103.22689
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 100
     arrivalTime: 103.59841
+    bombPlacementTime: 103.59841
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 100
     arrivalTime: 104.01637
+    bombPlacementTime: 104.01637
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 102
     arrivalTime: 105.54712
+    bombPlacementTime: 105.54712
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 103
     arrivalTime: 107.172516
+    bombPlacementTime: 107.172516
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 105
     arrivalTime: 108.70503
+    bombPlacementTime: 108.70503
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 106
     arrivalTime: 110.26077
+    bombPlacementTime: 110.26077
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 108
     arrivalTime: 111.79329
+    bombPlacementTime: 111.79329
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 109
     arrivalTime: 113.325806
+    bombPlacementTime: 113.325806
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 111
     arrivalTime: 114.85832
+    bombPlacementTime: 114.85832
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 112
     arrivalTime: 116.41406
+    bombPlacementTime: 116.41406
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 114
     arrivalTime: 117.94658
+    bombPlacementTime: 117.94658
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 116
     arrivalTime: 119.54875
+    bombPlacementTime: 119.54875
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 117
     arrivalTime: 121.10449
+    bombPlacementTime: 121.10449
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 119
     arrivalTime: 122.63524
+    bombPlacementTime: 122.63524
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 120
     arrivalTime: 124.14453
+    bombPlacementTime: 124.14453
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 122
     arrivalTime: 125.70027
+    bombPlacementTime: 125.70027
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 123
     arrivalTime: 127.27923
+    bombPlacementTime: 127.27923
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 125
     arrivalTime: 128.78853
+    bombPlacementTime: 128.78853
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 126
     arrivalTime: 130.36748
+    bombPlacementTime: 130.36748
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 127
     arrivalTime: 131.10875
+    bombPlacementTime: 131.10875
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 128
     arrivalTime: 131.5035
+    bombPlacementTime: 131.5035
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 128
     arrivalTime: 131.92145
+    bombPlacementTime: 131.92145
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 129
     arrivalTime: 132.68771
+    bombPlacementTime: 132.68771
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 129
     arrivalTime: 133.05923
+    bombPlacementTime: 133.05923
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 129
     arrivalTime: 133.47719
+    bombPlacementTime: 133.47719
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 130
     arrivalTime: 134.2649
+    bombPlacementTime: 134.2649
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 131
     arrivalTime: 134.58998
+    bombPlacementTime: 134.58998
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 131
     arrivalTime: 135.00793
+    bombPlacementTime: 135.00793
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 132
     arrivalTime: 135.72775
+    bombPlacementTime: 135.72775
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 133
     arrivalTime: 136.54045
+    bombPlacementTime: 136.54045
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 133
     arrivalTime: 137.30672
+    bombPlacementTime: 137.30672
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 134
     arrivalTime: 137.70145
+    bombPlacementTime: 137.70145
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 134
     arrivalTime: 138.11942
+    bombPlacementTime: 138.11942
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 135
     arrivalTime: 138.88567
+    bombPlacementTime: 138.88567
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 135
     arrivalTime: 139.27864
+    bombPlacementTime: 139.27864
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 136
     arrivalTime: 139.65016
+    bombPlacementTime: 139.65016
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 136
     arrivalTime: 140.41641
+    bombPlacementTime: 140.41641
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 137
     arrivalTime: 140.78793
+    bombPlacementTime: 140.78793
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 137
     arrivalTime: 141.22911
+    bombPlacementTime: 141.22911
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 139
     arrivalTime: 142.6902
+    bombPlacementTime: 142.6902
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 140
     arrivalTime: 143.54935
+    bombPlacementTime: 143.54935
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 140
     arrivalTime: 143.92087
+    bombPlacementTime: 143.92087
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 140
     arrivalTime: 144.36205
+    bombPlacementTime: 144.36205
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 141
     arrivalTime: 145.10507
+    bombPlacementTime: 145.10507
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 141
     arrivalTime: 145.4766
+    bombPlacementTime: 145.4766
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 142
     arrivalTime: 145.87134
+    bombPlacementTime: 145.87134
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 143
     arrivalTime: 146.59116
+    bombPlacementTime: 146.59116
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 143
     arrivalTime: 147.00911
+    bombPlacementTime: 147.00911
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 143
     arrivalTime: 147.40385
+    bombPlacementTime: 147.40385
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 144
     arrivalTime: 148.12367
+    bombPlacementTime: 148.12367
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 145
     arrivalTime: 148.91315
+    bombPlacementTime: 148.91315
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 146
     arrivalTime: 149.70264
+    bombPlacementTime: 149.70264
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 146
     arrivalTime: 150.09737
+    bombPlacementTime: 150.09737
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 146
     arrivalTime: 150.46889
+    bombPlacementTime: 150.46889
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 147
     arrivalTime: 151.25836
+    bombPlacementTime: 151.25836
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 148
     arrivalTime: 151.6531
+    bombPlacementTime: 151.6531
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: df202604666444fa804e40740f77af2a, type: 3}
     spawnTime: 148
     arrivalTime: 152.09428
+    bombPlacementTime: 152.09428
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 149
     arrivalTime: 152.79088
+    bombPlacementTime: 152.79088
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 149
     arrivalTime: 153.1624
+    bombPlacementTime: 153.1624
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 150
     arrivalTime: 153.58037
+    bombPlacementTime: 153.58037

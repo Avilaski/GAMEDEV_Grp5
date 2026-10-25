@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -6,13 +7,15 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 5;
     private int currentHealth;
+    public int CurrentHealth => currentHealth;
+    public event Action<int, int> HealthChanged;
 
     public TMP_Text healthText;
     public Transform spawnPoint;
 
     private CharacterController controller;
 
-    void Start()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
         ResetHealth();
@@ -20,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (damage <= 0)
+            return;
         currentHealth -= damage;
 
         currentHealth = Mathf.Clamp(
@@ -74,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthUI()
     {
+        HealthChanged?.Invoke(currentHealth, maxHealth);
         if (healthText != null)
         {
             healthText.text = "Health: " + currentHealth;

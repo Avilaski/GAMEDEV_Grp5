@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 5550192823978642809}
   - component: {fileID: 6744190012345678001}
   m_Layer: 0
-  m_Name: RedLane
+  m_Name: RedLaneOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,6 +967,7 @@ MonoBehaviour:
   songClock: {fileID: 0}
   bombPoint: {fileID: 601582672913027850}
   bombPrefab: {fileID: 7791978097386623694, guid: d05fccb8de2b83c4995dc7c850dde410, type: 3}
+  explosionVfxPrefab: {fileID: 3295543129202264388, guid: b54e9ab4ce7dc7e4e83f73632a15729b, type: 3}
   placementKey: 1
   beatWindowSeconds: 0.12
 --- !u!114 &6744190012345678001
@@ -981,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3fc76a95e4b50a2d350394dd04f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombBlast
-  blastZone: {fileID: 0}
+  playerDamage: 1
   targetLayers:
     serializedVersion: 2
     m_Bits: 4294967295
