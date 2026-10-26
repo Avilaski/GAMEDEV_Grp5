@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int points)
     {
-        currentScore += points;
+        currentScore = Mathf.Max(0, currentScore + points);
         UpdateScoreUI();
     }
 
