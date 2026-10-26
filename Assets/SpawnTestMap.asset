@@ -15,38 +15,38 @@ MonoBehaviour:
   song: {fileID: 8300000, guid: e6b739b192f4df040a2ec3338b32cb2f, type: 3}
   entries:
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 1
     arrivalTime: 5
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 2
     arrivalTime: 6
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 3
     arrivalTime: 7
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 4
     arrivalTime: 8
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 4
     arrivalTime: 8
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 4
     arrivalTime: 8
   - laneIndex: 0
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 5
     arrivalTime: 9
   - laneIndex: 1
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 5.5
     arrivalTime: 9.5
   - laneIndex: 2
-    prefab: {fileID: 11400000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
+    prefab: {fileID: 100000, guid: e54f40681aba4df1a6c35fd08a0eabf1, type: 3}
     spawnTime: 6
     arrivalTime: 10

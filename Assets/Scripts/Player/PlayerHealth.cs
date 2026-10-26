@@ -1,4 +1,4 @@
-
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -6,13 +6,21 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 5;
     private int currentHealth;
+    public int CurrentHealth => currentHealth;
 
+    public event Action<int, int> HealthChanged;
+    public event Action Died;
+    public HealthBar healthBar;
+    public GameOverManager gameOverManager;
+    private bool isDead;
+
+    public int GetCurrentHealth() => currentHealth;
+    public bool IsDead() => isDead;
     public TMP_Text healthText;
     public Transform spawnPoint;
-
     private CharacterController controller;
 
-    void Start()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
         ResetHealth();
@@ -20,16 +28,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead || damage <= 0)
+        {
+            return;
+        }
+
         currentHealth -= damage;
-
-        currentHealth = Mathf.Clamp(
-            currentHealth, 0, maxHealth
-        );
-
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthUI();
-
-        Debug.Log("Player Health: " + currentHealth);
-
         if (currentHealth <= 0)
         {
             Die();
@@ -38,42 +44,41 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amount)
     {
+        if (isDead || amount <= 0)
+        {
+            return;
+        }
+
         currentHealth += amount;
-
-        currentHealth = Mathf.Clamp(
-            currentHealth, 0, maxHealth
-        );
-
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthUI();
     }
 
     void Die()
     {
-        Debug.Log("Game Over! Respawning...");
-
-        if (spawnPoint != null)
+        if (isDead)
         {
-            if (controller != null)
-                controller.enabled = false;
-
-            transform.position = spawnPoint.position;
-            transform.rotation = spawnPoint.rotation;
-
-            if (controller != null)
-                controller.enabled = true;
+            return;
         }
 
-        ResetHealth();
+        isDead = true;
+        Died?.Invoke();
+        if (gameOverManager != null)
+        {
+            gameOverManager.ShowGameOver();
+        }
     }
 
     void ResetHealth()
     {
+        isDead = false;
         currentHealth = maxHealth;
         UpdateHealthUI();
     }
 
     void UpdateHealthUI()
     {
+        HealthChanged?.Invoke(currentHealth, maxHealth);
         if (healthText != null)
         {
             healthText.text = "Health: " + currentHealth;
