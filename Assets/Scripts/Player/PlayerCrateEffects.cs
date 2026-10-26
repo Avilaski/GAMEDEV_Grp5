@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerHealth))]
 public class PlayerCrateEffects : MonoBehaviour
 {
-    [SerializeField] private GameObject toggleableLights;
-
+    [SerializeField]
+    private GameObject toggleableLights;
     public event Action<CrateType> CrateCollected;
     public float SpeedMultiplier => Time.time < speedUntil ? speedMultiplier : 1f;
 

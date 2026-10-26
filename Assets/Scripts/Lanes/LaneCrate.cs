@@ -10,11 +10,13 @@ public enum CrateType
 [RequireComponent(typeof(LaneMover))]
 public class LaneCrate : MonoBehaviour
 {
-    [SerializeField] private CrateType crateType;
-    [SerializeField, Min(0f)] private float duration = 8f;
-    [SerializeField, Min(1f)] private float multiplier = 1.25f;
+    [SerializeField]
+    private CrateType crateType;
+    [SerializeField, Min(0f)]
+    private float duration = 8f;
+    [SerializeField, Min(1f)]
+    private float multiplier = 1.25f;
     private const float CollectionTolerance = 0.9f;
-
     private LaneMover mover;
     private PlayerCrateEffects player;
     private float collectionLaneX;

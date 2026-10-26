@@ -15,7 +15,6 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead;
 
     public int GetCurrentHealth() => currentHealth;
-
     public bool IsDead() => isDead;
     public TMP_Text healthText;
     public Transform spawnPoint;
