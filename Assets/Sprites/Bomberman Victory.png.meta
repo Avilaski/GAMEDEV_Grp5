@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 45c794bf0315e5a4c885b805c4454373
+guid: ec51ade9659949545b3d4ba64b339960
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4628452773727616381
-    second: Camera Icon_0
+      213: -8514550389203617684
+    second: Bomberman Victory_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Camera Icon_0
+      name: Bomberman Victory_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1050
-        height: 845
+        width: 1456
+        height: 927
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3824b4299be64cfb0800000000000000
-      internalID: -4628452773727616381
+      spriteID: c68ba55788d36d980800000000000000
+      internalID: -8514550389203617684
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Camera Icon_0: -4628452773727616381
+      Bomberman Victory_0: -8514550389203617684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,65 +1,128 @@
-using TMPro;
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
+    [Header("Game Over UI")]
     public GameObject gameOverPanel;
+    public GameObject winningPanel;
+
+    [Header("Gameplay")]
     public SpawnController songController;
     public string gameplaySceneName = "SampleScene";
     public string mainMenuSceneName = "MainMenu";
-    private bool gameOver, mapStopped;
+
+    [Header("Audio Sources")]
+    public AudioSource defeatAudioSource;
+    public AudioSource gameOverMusicSource;
+    public AudioSource victoryMusicSource;
+
+    [Header("Audio Start Times")]
+    public float gameOverMusicStartTime = 1f;
+    public float victoryMusicStartTime = 4f;
+
+    [Header("Defeat Sound")]
+    public float defeatSoundDuration = 1.5f;
+
+    private bool gameOver;
+    private bool gameWon;
 
     private void Awake()
     {
         if (gameOverPanel != null)
-        {
-            Image background = gameOverPanel.GetComponent<Image>();
-            if (background != null)
-            {
-                background.color = new Color(0f, 0f, 0f, 0.85f);
-            }
-
-            if (gameOverPanel.transform.childCount == 0)
-            {
-                AddText(gameOverPanel.transform, "Game Over", new Vector2(0, 90), new Vector2(400, 70), 42);
-                AddButton("Retry", new Vector2(0, 0), Retry);
-                AddButton("Main Menu", new Vector2(0, -65), ReturnToMainMenu);
-            }
-
             gameOverPanel.SetActive(false);
-        }
+
+        if (winningPanel != null)
+            winningPanel.SetActive(false);
 
         Time.timeScale = 1f;
+        gameOver = false;
+        gameWon = false;
+    }
+
+    private void OnEnable()
+    {
+        if (songController != null)
+            songController.SongFinished += ShowWinning;
+    }
+
+    private void OnDisable()
+    {
+        if (songController != null)
+            songController.SongFinished -= ShowWinning;
     }
 
     public void ShowGameOver()
     {
-        if (gameOver)
-        {
+        if (gameOver || gameWon)
             return;
-        }
 
         gameOver = true;
-        if (gameOverPanel != null)
+
+        // Stop gameplay and the song immediately.
+        if (songController != null)
+            songController.StopMap();
+
+        // Play the defeat sound from the beginning.
+        if (defeatAudioSource != null)
         {
-            gameOverPanel.SetActive(true);
+            defeatAudioSource.time = 0f;
+            defeatAudioSource.Play();
         }
 
-        Time.timeScale = 0f;
+        StartCoroutine(ShowGameOverAfterSound());
     }
 
-    private void LateUpdate()
+    private IEnumerator ShowGameOverAfterSound()
     {
-        if (gameOver && !mapStopped)
+        if (defeatAudioSource != null && defeatAudioSource.clip != null)
         {
-            mapStopped = true;
-            if (songController != null)
-            {
-                songController.StopMap();
-            }
+            float waitTime = Mathf.Min(
+                defeatSoundDuration,
+                defeatAudioSource.clip.length
+            );
+
+            yield return new WaitForSecondsRealtime(waitTime);
         }
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        // Pause gameplay, but allow UI audio to continue.
+        Time.timeScale = 0f;
+
+        PlayFromTime(gameOverMusicSource, gameOverMusicStartTime);
+    }
+
+    public void ShowWinning()
+    {
+        if (gameOver || gameWon)
+            return;
+
+        gameWon = true;
+
+        if (winningPanel != null)
+            winningPanel.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        PlayFromTime(victoryMusicSource, victoryMusicStartTime);
+    }
+
+    private void PlayFromTime(AudioSource source, float startTime)
+    {
+        if (source == null || source.clip == null)
+            return;
+
+        source.Stop();
+        source.time = Mathf.Clamp(
+            startTime,
+            0f,
+            Mathf.Max(0f, source.clip.length - 0.01f)
+        );
+        source.Play();
     }
 
     public void Retry()
@@ -72,34 +135,5 @@ public class GameOverManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
-    }
-
-    private void AddButton(string label, Vector2 position, UnityEngine.Events.UnityAction action)
-    {
-        GameObject go = new GameObject(label, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
-        go.transform.SetParent(gameOverPanel.transform, false);
-        RectTransform rect = go.GetComponent<RectTransform>();
-        rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
-        rect.anchoredPosition = position;
-        rect.sizeDelta = new Vector2(240, 48);
-        go.GetComponent<Image>().color = new Color(0.15f, 0.2f, 0.3f);
-        go.GetComponent<Button>().onClick.AddListener(action);
-        AddText(go.transform, label, Vector2.zero, new Vector2(240, 48), 24);
-    }
-
-    private void AddText(Transform parent, string label, Vector2 position, Vector2 size, float fontSize)
-    {
-        GameObject go = new GameObject(label, typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
-        go.transform.SetParent(parent, false);
-        RectTransform rect = go.GetComponent<RectTransform>();
-        rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
-        rect.anchoredPosition = position;
-        rect.sizeDelta = size;
-        TextMeshProUGUI text = go.GetComponent<TextMeshProUGUI>();
-        text.text = label;
-        text.fontSize = fontSize;
-        text.alignment = TextAlignmentOptions.Center;
-        text.color = Color.white;
-        text.raycastTarget = false;
     }
 }
