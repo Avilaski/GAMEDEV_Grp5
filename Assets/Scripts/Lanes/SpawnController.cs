@@ -24,6 +24,7 @@ public class SpawnController : MonoBehaviour
     public RhythmMap Map => rhythmMap;
 
     public event Action MapStopped;
+    public event Action SongFinished;
 
     private void Start()
     {
@@ -107,6 +108,13 @@ public class SpawnController : MonoBehaviour
         }
 
         double songTime = SongTime;
+
+        if (songTime >= rhythmMap.song.length)
+        {
+            FinishSong();
+            return;
+        }
+
         while (nextEntry < scheduledEntries.Length && scheduledEntries[nextEntry].spawnTime <= songTime)
         {
             LaneSpawnEntry entry = scheduledEntries[nextEntry];
@@ -176,6 +184,18 @@ public class SpawnController : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void FinishSong()
+    {
+        if (!isRunning) return;
+
+        isRunning = false;
+
+        if (musicSource != null)
+            musicSource.Stop();
+
+        SongFinished?.Invoke();
     }
 
     private void OnDisable()
