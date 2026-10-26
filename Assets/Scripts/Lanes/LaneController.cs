@@ -47,6 +47,13 @@ public class LaneController : MonoBehaviour
             enemy.Initialize(bomb != null ? bomb.PlayerHealth : null);
         }
 
+        LaneCrate crate = spawned.GetComponent<LaneCrate>();
+        if (crate != null)
+        {
+            BombController bomb = GetComponent<BombController>();
+            crate.Initialize(bomb != null ? bomb.PlayerHealth : null, despawnPoint.position);
+        }
+
         activeObjects.Add(instance);
         return instance;
     }

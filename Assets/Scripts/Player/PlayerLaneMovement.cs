@@ -16,6 +16,7 @@ public class PlayerLaneMovement : MonoBehaviour
     private Transform[] laneReferences = new Transform[3];
     private int targetLane = 1;
     private PlayerHealth playerHealth;
+    private PlayerCrateEffects crateEffects;
 
     private float LaneX(int index)
     {
@@ -54,6 +55,7 @@ public class PlayerLaneMovement : MonoBehaviour
         }
 
         playerHealth = GetComponent<PlayerHealth>();
+        crateEffects = GetComponent<PlayerCrateEffects>();
         float closest = float.PositiveInfinity;
         for (int i = 0; i < 3; i++)
         {
@@ -112,7 +114,8 @@ public class PlayerLaneMovement : MonoBehaviour
     private void MoveToLane()
     {
         float currentX = transform.position.x;
-        float nextX = Mathf.MoveTowards(currentX, targetX, laneChangeSpeed * Time.deltaTime);
+        float multiplier = crateEffects != null ? crateEffects.SpeedMultiplier : 1f;
+        float nextX = Mathf.MoveTowards(currentX, targetX, laneChangeSpeed * multiplier * Time.deltaTime);
         float deltaX = nextX - currentX;
         if (characterController != null)
         {

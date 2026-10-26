@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: BombermanBeatMap
   m_EditorClassIdentifier: Assembly-CSharp::RhythmMap
   song: {fileID: 8300000, guid: 3a6bc99b88e5c0644912a3755b8eec71, type: 3}
+  beatsPerMinute: 120
+  firstBeatTime: 0
   blastExpansionSeconds: 0.083333336
   entries:
   - laneIndex: 0
@@ -65,6 +67,11 @@ MonoBehaviour:
     spawnTime: 7
     arrivalTime: 11.162358
     bombPlacementTime: 11.162358
+  - laneIndex: 1
+    prefab: {fileID: 5816879082176630787, guid: 971d2756aa835884690e9f233e72c0a8, type: 3}
+    spawnTime: 8.917006
+    arrivalTime: 11.917006
+    bombPlacementTime: -1
   - laneIndex: 1
     prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 9
@@ -120,6 +127,11 @@ MonoBehaviour:
     spawnTime: 24
     arrivalTime: 28.101995
     bombPlacementTime: 28.101995
+  - laneIndex: 2
+    prefab: {fileID: 5816879082259789730, guid: aea145fbac5745acb5bf9e59ad8a6372, type: 3}
+    spawnTime: 24.364422
+    arrivalTime: 27.364422
+    bombPlacementTime: -1
   - laneIndex: 0
     prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 26
@@ -360,6 +372,11 @@ MonoBehaviour:
     spawnTime: 58
     arrivalTime: 62.24721
     bombPlacementTime: 62.24721
+  - laneIndex: 2
+    prefab: {fileID: 5816879082176630787, guid: 971d2756aa835884690e9f233e72c0a8, type: 3}
+    spawnTime: 58.457733
+    arrivalTime: 61.457733
+    bombPlacementTime: -1
   - laneIndex: 0
     prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 60
@@ -405,6 +422,11 @@ MonoBehaviour:
     spawnTime: 72
     arrivalTime: 76.15597
     bombPlacementTime: 76.15597
+  - laneIndex: 2
+    prefab: {fileID: 5816879082259789730, guid: 06f8042c7bd34cd4a7ec0f1ab891d0d3, type: 3}
+    spawnTime: 72.366486
+    arrivalTime: 75.366486
+    bombPlacementTime: -1
   - laneIndex: 0
     prefab: {fileID: 100000, guid: 9faa139db8da4638b5033f37fa5cbd8b, type: 3}
     spawnTime: 74
@@ -650,6 +672,11 @@ MonoBehaviour:
     spawnTime: 108
     arrivalTime: 111.79329
     bombPlacementTime: 111.79329
+  - laneIndex: 0
+    prefab: {fileID: 5816879082259789730, guid: aea145fbac5745acb5bf9e59ad8a6372, type: 3}
+    spawnTime: 108.02703
+    arrivalTime: 111.02703
+    bombPlacementTime: -1
   - laneIndex: 1
     prefab: {fileID: 100000, guid: 566846ca001e463f8b0fecb2bd92919a, type: 3}
     spawnTime: 109
@@ -700,6 +727,11 @@ MonoBehaviour:
     spawnTime: 123
     arrivalTime: 127.27923
     bombPlacementTime: 127.27923
+  - laneIndex: 1
+    prefab: {fileID: 5816879082259789730, guid: 06f8042c7bd34cd4a7ec0f1ab891d0d3, type: 3}
+    spawnTime: 123.48975
+    arrivalTime: 126.48975
+    bombPlacementTime: -1
   - laneIndex: 2
     prefab: {fileID: 100000, guid: ebcf78ae8b5143c79391c6f2d67dc68e, type: 3}
     spawnTime: 125
