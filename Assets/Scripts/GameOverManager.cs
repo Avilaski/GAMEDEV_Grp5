@@ -1,13 +1,17 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
     [Header("Game Over UI")]
     public GameObject gameOverPanel;
+    public TMP_Text gameOverScoreText;
+
+    [Header("Victory UI")]
     public GameObject winningPanel;
+    public TMP_Text winningScoreText;
 
     [Header("Gameplay")]
     public SpawnController songController;
@@ -90,6 +94,8 @@ public class GameOverManager : MonoBehaviour
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
+        UpdateGameOverScore();
+
         // Pause gameplay, but allow UI audio to continue.
         Time.timeScale = 0f;
 
@@ -106,9 +112,41 @@ public class GameOverManager : MonoBehaviour
         if (winningPanel != null)
             winningPanel.SetActive(true);
 
+        UpdateWinningScore();
+
         Time.timeScale = 0f;
 
         PlayFromTime(victoryMusicSource, victoryMusicStartTime);
+    }
+
+    private void UpdateGameOverScore()
+    {
+        if (gameOverScoreText == null)
+            return;
+
+        if (ScoreManager.Instance != null)
+        {
+            gameOverScoreText.text = ScoreManager.Instance.GetScore().ToString();
+        }
+        else
+        {
+            gameOverScoreText.text = "0";
+        }
+    }
+
+    private void UpdateWinningScore()
+    {
+        if (winningScoreText == null)
+            return;
+
+        if (ScoreManager.Instance != null)
+        {
+            winningScoreText.text = ScoreManager.Instance.GetScore().ToString();
+        }
+        else
+        {
+            gameOverScoreText.text = "0";
+        }
     }
 
     private void PlayFromTime(AudioSource source, float startTime)
