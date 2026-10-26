@@ -39,6 +39,11 @@ public class BombController : MonoBehaviour
     public float FuseSeconds => Mathf.Max(0.1f, fuseSeconds);
     public PlayerHealth PlayerHealth => player != null ? player.GetComponentInParent<PlayerHealth>() : null;
 
+    [Header("Sound Effects")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip bombPlaceSound;
+    [SerializeField] private AudioClip bombExplosionSound;
+
     public void BindPlayer(Transform scenePlayer)
     {
         if (player == null)
@@ -136,6 +141,11 @@ public class BombController : MonoBehaviour
                 ExplosionSpawned?.Invoke(explosion);
             }
 
+            if (audioSource != null && bombExplosionSound != null)
+            {
+                audioSource.PlayOneShot(bombExplosionSound);
+            }
+
             Exploded?.Invoke(position);
         }
 
@@ -212,10 +222,17 @@ public class BombController : MonoBehaviour
         return true;
     }
 
+
     private void SpawnBomb()
     {
-        activeBomb = Instantiate(bombPrefab, bombPoint.position, bombPoint.rotation);
-        foreach (Collider bombCollider in activeBomb.GetComponentsInChildren<Collider>())
+        activeBomb = Instantiate(
+            bombPrefab,
+            bombPoint.position,
+            bombPoint.rotation
+        );
+
+        foreach (Collider bombCollider in
+            activeBomb.GetComponentsInChildren<Collider>())
         {
             bombCollider.enabled = false;
         }
@@ -225,8 +242,14 @@ public class BombController : MonoBehaviour
             activeBomb.AddComponent<BombPopAnimation>();
         }
 
+        if (audioSource != null && bombPlaceSound != null)
+        {
+            audioSource.PlayOneShot(bombPlaceSound);
+        }
+
         Placed?.Invoke(bombPoint.position);
     }
+
 
     private void ClearBomb()
     {
