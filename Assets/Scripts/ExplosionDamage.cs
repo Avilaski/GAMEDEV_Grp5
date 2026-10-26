@@ -92,11 +92,31 @@ public class ExplosionDamage : MonoBehaviour
                 continue;
             }
 
+
             LaneMover target = other.GetComponentInParent<LaneMover>();
+
             if (target != null && hitObjects.Add(target))
             {
+
+                if (target.CompareTag("RedMonster") ||
+                    target.CompareTag("BlueMonster"))
+                {
+                    if (ScoreManager.Instance != null)
+                    {
+                        ScoreManager.Instance.AddScore(100);
+                    }
+                }
+                else if (target.CompareTag("Crate"))
+                {
+                    if (ScoreManager.Instance != null)
+                    {
+                        ScoreManager.Instance.AddScore(-50);
+                    }
+                }
+
                 target.DestroyByBlast();
             }
+
         }
     }
 
