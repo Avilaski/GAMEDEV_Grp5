@@ -2,12 +2,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
     [Header("Game Over UI")]
     public GameObject gameOverPanel;
     public GameObject winningPanel;
+
+    [Header("Final Score UI")]
+    public TMP_Text gameOverScoreText;
+    public TMP_Text winningScoreText;
 
     [Header("Gameplay")]
     public SpawnController songController;
@@ -77,7 +82,8 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator ShowGameOverAfterSound()
     {
-        if (defeatAudioSource != null && defeatAudioSource.clip != null)
+        if (defeatAudioSource != null &&
+            defeatAudioSource.clip != null)
         {
             float waitTime = Mathf.Min(
                 defeatSoundDuration,
@@ -86,6 +92,8 @@ public class GameOverManager : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(waitTime);
         }
+
+        UpdateFinalScoreUI();
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
@@ -103,12 +111,30 @@ public class GameOverManager : MonoBehaviour
 
         gameWon = true;
 
+        UpdateFinalScoreUI();
+
         if (winningPanel != null)
             winningPanel.SetActive(true);
 
         Time.timeScale = 0f;
 
         PlayFromTime(victoryMusicSource, victoryMusicStartTime);
+    }
+
+    private void UpdateFinalScoreUI()
+    {
+        if (ScoreManager.Instance == null)
+            return;
+
+        // Display only the number on the end screens.
+        string finalScore =
+            ScoreManager.Instance.GetScore().ToString();
+
+        if (gameOverScoreText != null)
+            gameOverScoreText.text = finalScore;
+
+        if (winningScoreText != null)
+            winningScoreText.text = finalScore;
     }
 
     private void PlayFromTime(AudioSource source, float startTime)

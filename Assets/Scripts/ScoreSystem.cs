@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
     [Header("UI")]
     public TMP_Text scoreText;
 
+    [Tooltip("Enable for gameplay UI; disable for game-over and winning screens.")]
+    public bool showScoreLabel = true;
+
     private int currentScore = 0;
 
     private void Awake()
@@ -57,7 +60,8 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + currentScore;
+            string label = showScoreLabel ? "Score: " : "";
+            scoreText.text = label + currentScore;
         }
     }
 
