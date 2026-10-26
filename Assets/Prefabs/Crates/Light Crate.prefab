@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 5816879082176630787, guid: 971d2756aa835884690e9f233e72c0a8, type: 3}
+      propertyPath: m_TagString
+      value: Crate
+      objectReference: {fileID: 0}
     - target: {fileID: 5860906521801500415, guid: 971d2756aa835884690e9f233e72c0a8, type: 3}
       propertyPath: m_VersionIndex
       value: 1796
