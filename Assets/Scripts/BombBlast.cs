@@ -1,12 +1,12 @@
 using UnityEngine;
 
-// Listens for the bomb's broadcast and gives each spawned flame its damage settings.
 [RequireComponent(typeof(BombController))]
 public class BombBlast : MonoBehaviour
 {
-    [SerializeField, Min(0)] private int playerDamage = 1;
-    [SerializeField] private LayerMask targetLayers = ~0;
-
+    [SerializeField, Min(0)]
+    private int playerDamage = 1;
+    [SerializeField]
+    private LayerMask targetLayers = ~0;
     private BombController bomb;
 
     private void Awake()
@@ -29,9 +29,10 @@ public class BombBlast : MonoBehaviour
         ExplosionDamage damage = explosion.GetComponent<ExplosionDamage>();
         if (damage == null)
         {
-            Debug.LogWarning("The explosion prefab needs an ExplosionDamage component and BoxCollider.", this);
+            Debug.LogWarning("The explosion prefab needs an ExplosionDamage component and BoxCollider", this);
             return;
         }
+
         damage.Initialize(playerDamage, targetLayers);
     }
 }

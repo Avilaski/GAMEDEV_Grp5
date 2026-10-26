@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// This volume is part of FlameVFX, so its range follows the same scale animation.
 [RequireComponent(typeof(BoxCollider))]
 public class ExplosionDamage : MonoBehaviour
 {
@@ -24,31 +23,32 @@ public class ExplosionDamage : MonoBehaviour
 
     private void FitHeightToFlame()
     {
-        // Keep the reference cube's X/Z footprint; use the flame's own height.
-        // Transform mesh bounds into this object's local space, so root scaling
-        // does not bake an animation frame's size into the collider.
         float bottom = float.PositiveInfinity;
         float top = float.NegativeInfinity;
         foreach (MeshRenderer renderer in GetComponentsInChildren<MeshRenderer>())
         {
             MeshFilter mesh = renderer.GetComponent<MeshFilter>();
             if (!renderer.enabled || mesh == null || mesh.sharedMesh == null)
+            {
                 continue;
+            }
+
             Bounds bounds = mesh.sharedMesh.bounds;
             Matrix4x4 toLocal = transform.worldToLocalMatrix * renderer.transform.localToWorldMatrix;
             for (int corner = 0; corner < 8; corner++)
             {
-                Vector3 point = bounds.center + Vector3.Scale(bounds.extents, new Vector3(
-                    (corner & 1) == 0 ? -1f : 1f,
-                    (corner & 2) == 0 ? -1f : 1f,
-                    (corner & 4) == 0 ? -1f : 1f));
+                Vector3 point = bounds.center + Vector3.Scale(bounds.extents, new Vector3((corner & 1) == 0 ? -1f : 1f, (corner & 2) == 0 ? -1f : 1f, (corner & 4) == 0 ? -1f : 1f));
                 float y = toLocal.MultiplyPoint3x4(point).y;
                 bottom = Mathf.Min(bottom, y);
                 top = Mathf.Max(top, y);
             }
         }
+
         if (float.IsInfinity(bottom))
+        {
             return;
+        }
+
         Vector3 size = hitbox.size;
         size.y = Mathf.Max(0.01f, top - bottom);
         hitbox.size = size;
@@ -60,31 +60,43 @@ public class ExplosionDamage : MonoBehaviour
     private void LateUpdate()
     {
         if (!initialized)
+        {
             return;
+        }
 
         Vector3 scale = transform.lossyScale;
-        Vector3 halfSize = Vector3.Scale(hitbox.size, new Vector3(
-            Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z))) * 0.5f;
+        Vector3 halfSize = Vector3.Scale(hitbox.size, new Vector3(Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z))) * 0.5f;
         if (Mathf.Min(halfSize.x, halfSize.y, halfSize.z) < 0.001f)
+        {
             return;
+        }
 
-        // Animator and LaneMover both move transforms before LateUpdate.
         Physics.SyncTransforms();
-        Collider[] overlaps = Physics.OverlapBox(transform.TransformPoint(hitbox.center),
-            halfSize, transform.rotation, targetLayers, QueryTriggerInteraction.Collide);
+        Collider[] overlaps = Physics.OverlapBox(transform.TransformPoint(hitbox.center), halfSize, transform.rotation, targetLayers, QueryTriggerInteraction.Collide);
         foreach (Collider other in overlaps)
         {
             PlayerHealth health = other.GetComponentInParent<PlayerHealth>();
             if (health != null)
             {
+                PlayerLaneMovement movement = health.GetComponent<PlayerLaneMovement>();
+                if (movement != null && movement.IsProtectedFromBombs)
+                {
+                    continue;
+                }
+
                 if (hitPlayers.Add(health))
+                {
                     health.TakeDamage(playerDamage);
+                }
+
                 continue;
             }
 
             LaneMover target = other.GetComponentInParent<LaneMover>();
             if (target != null && hitObjects.Add(target))
+            {
                 target.DestroyByBlast();
+            }
         }
     }
 
@@ -92,7 +104,10 @@ public class ExplosionDamage : MonoBehaviour
     {
         BoxCollider box = GetComponent<BoxCollider>();
         if (box == null)
+        {
             return;
+        }
+
         Matrix4x4 previous = Gizmos.matrix;
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = Color.yellow;

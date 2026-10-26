@@ -1,10 +1,10 @@
 using UnityEngine;
 
-// Only monster prefabs carry this component; future crates can have their own response.
 [RequireComponent(typeof(LaneMover))]
 public class LaneEnemy : MonoBehaviour
 {
-    [SerializeField, Min(0)] private int arrivalDamage = 1;
+    [SerializeField, Min(0)]
+    private int arrivalDamage = 1;
     private LaneMover mover;
     private PlayerHealth playerHealth;
 
@@ -31,6 +31,8 @@ public class LaneEnemy : MonoBehaviour
     private void DamagePlayer()
     {
         if (playerHealth != null)
+        {
             playerHealth.TakeDamage(arrivalDamage);
+        }
     }
 }

@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class LaneController : MonoBehaviour
 {
-    [SerializeField] private Transform startPoint;
-    [SerializeField] private Transform despawnPoint;
-
+    [SerializeField]
+    private Transform startPoint;
+    [SerializeField]
+    private Transform despawnPoint;
     private readonly List<LaneMover> activeObjects = new List<LaneMover>();
     public bool IsConfigured => startPoint != null && despawnPoint != null;
 
@@ -13,15 +14,16 @@ public class LaneController : MonoBehaviour
     {
         arrival = entry.arrivalTime;
         BombController bomb = GetComponent<BombController>();
-        if (!IsConfigured || bomb == null || !bomb.TryGetBlastEntry(
-            startPoint.position, despawnPoint.position, out float progress))
+        if (!IsConfigured || bomb == null || !bomb.TryGetBlastEntry(startPoint.position, despawnPoint.position, out float progress))
+        {
             return false;
+        }
+
         float impactTime = entry.bombPlacementTime + bomb.FuseSeconds + expansionSeconds;
         arrival = entry.spawnTime + (impactTime - entry.spawnTime) / progress;
         return arrival > impactTime && !float.IsInfinity(arrival) && !float.IsNaN(arrival);
     }
 
-    // Spawn immediately. SpawnController decides WHEN to call this method.
     public LaneMover Spawn(GameObject prefab, double spawnTime, double arrivalTime)
     {
         if (!IsConfigured || prefab == null || arrivalTime <= spawnTime)
@@ -33,7 +35,10 @@ public class LaneController : MonoBehaviour
         GameObject spawned = Instantiate(prefab, startPoint.position, prefab.transform.rotation);
         LaneMover instance = spawned.GetComponent<LaneMover>();
         if (instance == null)
+        {
             instance = spawned.AddComponent<LaneMover>();
+        }
+
         instance.Initialize(startPoint.position, despawnPoint.position, spawnTime, arrivalTime);
         LaneEnemy enemy = spawned.GetComponent<LaneEnemy>();
         if (enemy != null)
@@ -41,13 +46,13 @@ public class LaneController : MonoBehaviour
             BombController bomb = GetComponent<BombController>();
             enemy.Initialize(bomb != null ? bomb.PlayerHealth : null);
         }
+
         activeObjects.Add(instance);
         return instance;
     }
 
     public void UpdateObjects(double songTime)
     {
-        // Iterate backwards so removing destroyed objects is safe.
         for (int i = activeObjects.Count - 1; i >= 0; i--)
         {
             if (activeObjects[i] == null)

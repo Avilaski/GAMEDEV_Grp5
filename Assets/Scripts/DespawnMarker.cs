@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class DespawnMarker : MonoBehaviour
@@ -14,8 +13,6 @@ public class DespawnMarker : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-
-              
             }
 
             Destroy(other.gameObject);

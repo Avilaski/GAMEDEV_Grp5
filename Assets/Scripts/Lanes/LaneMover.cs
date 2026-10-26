@@ -4,7 +4,6 @@ using UnityEngine;
 public class LaneMover : MonoBehaviour
 {
     public event Action ReachedEnd;
-
     private Vector3 startPosition;
     private Vector3 endPosition;
     private double spawnTime;
@@ -14,11 +13,11 @@ public class LaneMover : MonoBehaviour
     public bool DestroyByBlast()
     {
         if (!isMoving || !gameObject.activeInHierarchy)
+        {
             return false;
+        }
 
         isMoving = false;
-        // Disable immediately so another explosion cannot hit this object again
-        // before Unity processes the deferred Destroy call.
         gameObject.SetActive(false);
         Destroy(gameObject);
         return true;
@@ -34,16 +33,15 @@ public class LaneMover : MonoBehaviour
         isMoving = arrivalTime > spawnTime;
     }
 
-    // The controller supplies the same song timestamp to every object.
     public void UpdatePosition(double songTime)
     {
         if (!isMoving)
+        {
             return;
+        }
 
         float progress = Mathf.Clamp01((float)((songTime - spawnTime) / (arrivalTime - spawnTime)));
-
         transform.position = Vector3.Lerp(startPosition, endPosition, progress);
-
         if (songTime >= arrivalTime)
         {
             isMoving = false;

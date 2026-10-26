@@ -2,59 +2,73 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// One fixed bomb tile per controller. Test movement with a fixed fuse first.
-// BombBlast and lighting can subscribe to Exploded.
 public class BombController : MonoBehaviour
 {
     [Header("Placement")]
-    [SerializeField] private Transform player;
-    [SerializeField, Min(0.01f)] private float placementRadius = 0.75f;
-    [Header("Fuse")]
-    [SerializeField] private bool useBeatTiming;
-    [SerializeField, Min(0.1f)] private float fuseSeconds = 1f;
-    [SerializeField] private SpawnController songClock;
-    [SerializeField] private Transform bombPoint;
-    [SerializeField] private GameObject bombPrefab;
-    [Header("Visual effects")]
-    [SerializeField] private GameObject explosionVfxPrefab;
-    [SerializeField] private Key placementKey = Key.Space;
-    [SerializeField, Min(0f)] private float beatWindowSeconds = 0.12f;
+    [SerializeField]
+    private Transform player;
+    [SerializeField, Min(0.01f)]
+    private float placementRadius = 0.75f;
 
+    [Header("Fuse")]
+    [SerializeField]
+    private bool useBeatTiming;
+    [SerializeField, Min(0.1f)]
+    private float fuseSeconds = 1f;
+    [SerializeField]
+    private SpawnController songClock;
+    [SerializeField]
+    private Transform bombPoint;
+    [SerializeField]
+    private GameObject bombPrefab;
+
+    [Header("Visual effects")]
+    [SerializeField]
+    private GameObject explosionVfxPrefab;
+    [SerializeField]
+    private Key placementKey = Key.Space;
+    [SerializeField, Min(0f)]
+    private float beatWindowSeconds = 0.12f;
     public event Action<Vector3> Placed;
     public event Action<Vector3> Exploded;
     public event Action<GameObject> ExplosionSpawned;
-
     private GameObject activeBomb;
     private double explosionTime;
     private double lastPlacementBeat = double.NegativeInfinity;
     private bool activeBombUsesBeatTiming;
-
     public float FuseSeconds => Mathf.Max(0.1f, fuseSeconds);
     public PlayerHealth PlayerHealth => player != null ? player.GetComponentInParent<PlayerHealth>() : null;
 
     public void BindPlayer(Transform scenePlayer)
     {
-        // Preserve an explicit per-lane assignment, including future multiplayer lanes.
         if (player == null)
+        {
             player = scenePlayer;
+        }
     }
 
     public void BindSongClock(SpawnController clock)
     {
         if (songClock != null)
+        {
             songClock.MapStopped -= ClearBomb;
+        }
+
         songClock = clock;
         if (isActiveAndEnabled && songClock != null)
+        {
             songClock.MapStopped += ClearBomb;
+        }
     }
 
     public bool TryGetBlastEntry(Vector3 start, Vector3 end, out float progress)
     {
         progress = 0f;
-        BoxCollider box = explosionVfxPrefab != null
-            ? explosionVfxPrefab.GetComponent<BoxCollider>() : null;
+        BoxCollider box = explosionVfxPrefab != null ? explosionVfxPrefab.GetComponent<BoxCollider>() : null;
         if (box == null || bombPoint == null)
+        {
             return false;
+        }
 
         Quaternion inverse = Quaternion.Inverse(bombPoint.rotation);
         Vector3 origin = inverse * (start - bombPoint.position);
@@ -63,24 +77,30 @@ public class BombController : MonoBehaviour
         Vector3 center = Vector3.Scale(box.center, explosionVfxPrefab.transform.localScale);
         origin -= center;
         float enter = 0f, exit = 1f;
-        // The chart targets the horizontal footprint; the flame supplies hitbox height.
         for (int axis = 0; axis < 3; axis += 2)
         {
             float half = Mathf.Abs(size[axis]) * 0.5f;
             if (Mathf.Abs(delta[axis]) < 0.00001f)
             {
                 if (Mathf.Abs(origin[axis]) > half)
+                {
                     return false;
+                }
+
                 continue;
             }
+
             float a = (-half - origin[axis]) / delta[axis];
             float b = (half - origin[axis]) / delta[axis];
             enter = Mathf.Max(enter, Mathf.Min(a, b));
             exit = Mathf.Min(exit, Mathf.Max(a, b));
         }
+
         if (enter >= exit || enter <= 0f || enter >= 1f)
+        {
             return false;
-        // Slightly inside the approaching edge, allowing for frame timing.
+        }
+
         progress = Mathf.Min(enter + 0.25f / Vector3.Distance(start, end), (enter + exit) * 0.5f);
         return true;
     }
@@ -88,39 +108,55 @@ public class BombController : MonoBehaviour
     private void OnEnable()
     {
         if (songClock != null)
+        {
             songClock.MapStopped += ClearBomb;
+        }
     }
 
     private void LateUpdate()
     {
-        double now = activeBombUsesBeatTiming && songClock != null
-            ? songClock.SongTime : Time.timeAsDouble;
+        double now = activeBombUsesBeatTiming && songClock != null ? songClock.SongTime : Time.timeAsDouble;
         if (activeBomb != null && now >= explosionTime)
         {
             Vector3 position = activeBomb.transform.position;
             BombPopAnimation pop = activeBomb.GetComponent<BombPopAnimation>();
             if (pop != null)
+            {
                 pop.Despawn();
+            }
             else
+            {
                 Destroy(activeBomb);
+            }
+
             activeBomb = null;
             if (explosionVfxPrefab != null)
             {
                 GameObject explosion = Instantiate(explosionVfxPrefab, position, bombPoint.rotation);
                 ExplosionSpawned?.Invoke(explosion);
             }
-            Debug.Log("Bomb detonated.", this);
+
             Exploded?.Invoke(position);
         }
 
         if (Keyboard.current != null && Keyboard.current[placementKey].wasPressedThisFrame)
+        {
             TryPlaceBomb();
+        }
     }
 
     public bool TryPlaceBomb()
     {
-        if (activeBomb != null)
+        if (PlayerHealth != null && PlayerHealth.IsDead())
+        {
             return false;
+        }
+
+        if (activeBomb != null)
+        {
+            return false;
+        }
+
         if (player == null || bombPoint == null || bombPrefab == null)
         {
             Debug.LogWarning("Bomb placement needs Player, Bomb Point, and Bomb Prefab assigned.", this);
@@ -131,8 +167,6 @@ public class BombController : MonoBehaviour
         offset.y = 0f;
         if (offset.sqrMagnitude > placementRadius * placementRadius)
         {
-            Debug.Log($"Move onto this lane's bomb tile: distance {offset.magnitude:F2}, " +
-                $"allowed {placementRadius:F2} world units.", this);
             return false;
         }
 
@@ -146,17 +180,21 @@ public class BombController : MonoBehaviour
         }
 
         if (songClock == null || !songClock.IsRunning || songClock.Map == null)
+        {
             return false;
+        }
 
         RhythmMap map = songClock.Map;
-        if (float.IsNaN(map.beatsPerMinute) || float.IsInfinity(map.beatsPerMinute) ||
-            map.beatsPerMinute < 1f || float.IsNaN(map.firstBeatTime) ||
-            float.IsInfinity(map.firstBeatTime))
+        if (float.IsNaN(map.beatsPerMinute) || float.IsInfinity(map.beatsPerMinute) || map.beatsPerMinute < 1f || float.IsNaN(map.firstBeatTime) || float.IsInfinity(map.firstBeatTime))
+        {
             return false;
+        }
 
         double now = songClock.SongTime;
         if (now < 0)
+        {
             return false;
+        }
 
         double beatDuration = 60.0 / map.beatsPerMinute;
         double beatIndex = Math.Round((now - map.firstBeatTime) / beatDuration);
@@ -164,7 +202,6 @@ public class BombController : MonoBehaviour
         double window = Math.Min(beatWindowSeconds, beatDuration * 0.25);
         if (beatIndex < 0 || beatIndex <= lastPlacementBeat || Math.Abs(now - placementTime) > window)
         {
-            Debug.Log("Bomb placement missed the beat window.", this);
             return false;
         }
 
@@ -178,13 +215,16 @@ public class BombController : MonoBehaviour
     private void SpawnBomb()
     {
         activeBomb = Instantiate(bombPrefab, bombPoint.position, bombPoint.rotation);
-        // The player must be able to step out of the newly occupied tile.
-        // Bomb blocking can be added separately from the blast overlap query.
         foreach (Collider bombCollider in activeBomb.GetComponentsInChildren<Collider>())
+        {
             bombCollider.enabled = false;
+        }
+
         if (activeBomb.GetComponent<BombPopAnimation>() == null)
+        {
             activeBomb.AddComponent<BombPopAnimation>();
-        Debug.Log("Bomb placed. Move away!", this);
+        }
+
         Placed?.Invoke(bombPoint.position);
     }
 
@@ -195,6 +235,7 @@ public class BombController : MonoBehaviour
             activeBomb.SetActive(false);
             Destroy(activeBomb);
         }
+
         activeBomb = null;
         lastPlacementBeat = double.NegativeInfinity;
     }
@@ -202,7 +243,10 @@ public class BombController : MonoBehaviour
     private void OnDisable()
     {
         if (songClock != null)
+        {
             songClock.MapStopped -= ClearBomb;
+        }
+
         ClearBomb();
     }
 }
